@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+:root {
+  --bg-color: #1a1a2e;
+  --primary-color: #16213e;
+  --secondary-color: #0f3460;
+  --accent-color: #e94560;
+  --text-color: #ffffff;
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb: #16213e;
+  --scrollbar-thumb-hover: #e94560;
+  font-size: 10px;
+}
+* {
+  font-family: 'Manrope', sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 1rem 2rem;
+  gap: 1rem;
+  min-height: calc(100vh - 2rem);
+  display: grid;
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+#body > * {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 15px;
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.3),
+    0 6px 6px rgba(0, 0, 0, 0.2),
+    inset 0 -5px 10px rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+.icon {
+  width: 10rem;
+  height: 10rem;
+  align-self: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.clear-day {
+  background-image: url('./icons/clear-day.svg');
+}
+
+.clear-night {
+  background-image: url('./icons/clear-night.svg');
+}
+
+.cloudy {
+  background-image: url('./icons/cloudy.svg');
+}
+
+.fog {
+  background-image: url('./icons/fog.svg');
+}
+
+.hail {
+  background-image: url('./icons/hail.svg');
+}
+
+.partly-cloudy-day {
+  background-image: url('./icons/partly-cloudy-day.svg');
+}
+
+.partly-cloudy-night {
+  background-image: url('./icons/partly-cloudy-night.svg');
+}
+
+.rain-snow-showers-day {
+  background-image: url('./icons/rain-snow-showers-day.svg');
+}
+
+.rain-snow-showers-night {
+  background-image: url('./icons/rain-snow-showers-night.svg');
+}
+
+.rain-snow {
+  background-image: url('./icons/rain-snow.svg');
+}
+
+.rain {
+  background-image: url('./icons/rain.svg');
+}
+
+.showers-day {
+  background-image: url('./icons/showers-day.svg');
+}
+
+.showers-night {
+  background-image: url('./icons/showers-night.svg');
+}
+
+.sleet {
+  background-image: url('./icons/sleet.svg');
+}
+
+.snow-showers-day {
+  background-image: url('./icons/snow-showers-day.svg');
+}
+
+.snow-showers-night {
+  background-image: url('./icons/snow-showers-night.svg');
+}
+
+.snow {
+  background-image: url('./icons/snow.svg');
+}
+
+.thunder-rain {
+  background-image: url('./icons/thunder-rain.svg');
+}
+
+.thunder-showers-day {
+  background-image: url('./icons/thunder-showers-day.svg');
+}
+
+.thunder-showers-night {
+  background-image: url('./icons/thunder-showers-night.svg');
+}
+
+.thunder {
+  background-image: url('./icons/thunder.svg');
+}
+
+.wind {
+  background-image: url('./icons/wind.svg');
+}
+
+#form {
+  grid-area: form;
+  display: flex;
+  font-size: 0.8rem;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#weatherInformation {
+  grid-area: main-card;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 2rem;
+  padding: 2rem;
+  max-width: 100%;
+}
+
+#cards {
+  display: flex;
+  flex-direction: column;
+
+  grid-area: cards;
+  overflow: auto;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+}
+#cards::-webkit-scrollbar {
+  width: 12px;
+}
+
+#cards::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+  border-radius: 10px;
+}
+
+#cards::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+  border: 6px solid var(--scrollbar-bg);
+}
+
+#cards::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+.card {
+  display: flex;
+  padding-inline: 0.5rem;
+  align-items: center;
+  margin-block: 0.25rem;
+  background-color: transparent;
+}
+
+.card > *:not(:first-child) {
+  flex: 1;
+}
+
+.date-content {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: flex-end;
+  margin-right: 0.5rem;
+}
+
+.card-icon {
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#body > *:hover {
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.4),
+    0 10px 10px rgba(0, 0, 0, 0.3),
+    inset 0 -5px 10px rgba(255, 255, 255, 0.2);
+}
+
+header {
+  grid-area: header;
+  background: linear-gradient(
+    45deg,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+  text-align: center;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+h2,
+h3 {
+  color: var(--accent-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 0;
+}
+
+input,
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+input {
+  width: 40%;
+}
+
+input:focus,
+button:hover {
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--accent-color);
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+#body {
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 0.5fr 2fr 4fr;
+  grid-template-areas:
+    'header'
+    'form'
+    'main-card'
+    'cards';
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    font-size: 16px;
+  }
+
+  #body {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 0.5fr 0.5fr 5fr;
+    grid-template-areas:
+      'header header header'
+      'form form form'
+      'main-card cards cards';
+  }
+
+  #cards {
+    font-size: 0.8rem;
+    padding-inline: 2rem;
+  }
+  .card-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #body {
+    margin: 1rem 2rem;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 8fr;
+    grid-template-areas:
+      'header form'
+      'main-card cards';
+  }
+  .card-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #body > * {
+    padding: 8px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #body {
+    gap: 1.5rem;
+  }
+}
